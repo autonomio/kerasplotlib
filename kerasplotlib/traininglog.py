@@ -21,7 +21,6 @@ class TrainingLog(Callback):
         self.cell_size = cell_size
         self.dynamic_x_axis = dynamic_x_axis
         self.max_cols = max_cols
-        self.metric2printable = metric2printable.copy()
 
     def on_train_begin(self, logs={}):
         self.base_metrics = [metric for metric in self.params['metrics'] if not metric.startswith('val_')]
@@ -51,8 +50,7 @@ class TrainingLog(Callback):
                   figsize=self.figsize, 
                   max_epoch=self.max_epoch,
                   max_cols=self.max_cols,
-                  validation_fmt="val_{}",
-                  metric2title=self.metric2printable)
+                  validation_fmt="val_{}")
 
 def draw_plot(logs,
               metrics,
