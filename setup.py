@@ -1,18 +1,13 @@
 #! /usr/bin/env python
 #
 import os
-# temporarily redirect config directory to prevent matplotlib importing
-# testing that for writeable directory which results in sandbox error in
-# certain easy_install versions
 os.environ["MPLCONFIGDIR"] = "."
 
 DESCRIPTION = "Kerasplotlib is a visualization library for Keras"
 LONG_DESCRIPTION = """\
-
 Kerasplotlib provides a useful interface for Keras users that meet
 many common visualization needs related with training and evaluating 
 deep learning models.
-
 """
 
 DISTNAME = 'kerasplotlib'
@@ -39,7 +34,7 @@ def check_dependencies():
     try:
         import keras
     except ImportError:
-        install_requires.append('seaborn')
+        install_requires.append('keras')
 
     return install_requires
 
@@ -59,10 +54,9 @@ if __name__ == "__main__":
         version=VERSION,
         download_url=DOWNLOAD_URL,
         include_package_data=True,
-        package_data={'astetik.extras': ['*']},
+#        package_data={'kerasplotlib.extras': ['*']},
         install_requires=install_requires,
-        packages=['kerasplotlib',
-                  'kerasplotlib.liveline'],
+        packages=['kerasplotlib'],
         classifiers=[
                      'Intended Audience :: Science/Research',
                      'Programming Language :: Python :: 2.7',
