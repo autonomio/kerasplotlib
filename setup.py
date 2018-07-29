@@ -6,7 +6,7 @@ os.environ["MPLCONFIGDIR"] = "."
 DESCRIPTION = "Kerasplotlib is a visualization library for Keras"
 LONG_DESCRIPTION = """\
 Kerasplotlib provides a useful interface for Keras users that meet
-many common visualization needs related with training and evaluating 
+many common visualization needs related with training and evaluating
 deep learning models.
 """
 
@@ -16,7 +16,7 @@ MAINTAINER_EMAIL = 'mailme@mikkokotila.com'
 URL = 'http://mikkokotila.com'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/autonomio/kerasplotlib'
-VERSION = '0.1.2'
+VERSION = '0.1.4'
 
 try:
     from setuptools import setup
