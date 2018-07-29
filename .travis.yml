@@ -16,5 +16,9 @@ script:
 - coverage run --source=talos ./test_script.py
 after_success: coveralls
 deploy:
+  provider: pypi
+  user: "mikkokotila"
   password:
     secure: eeBLzRNgvnm3iC+wKcwLcONyVmYO6bPU8H59KO4j1vA5lS2PPPCQVhpSZTmXXMla5jZkW668gR57JExhFdpeZSMrmbNkwmxyV46nWOwEXOyTGKD+5bFgAfBeDnKhpiQcF/cW7oJv3R15ksN05UduOqETRgWXOIi7k6caFNWxy9yLziTegliSsWzePcTHYjFxRWhFUxTHFEIw8zI8I155AISB3UxkruzJtq01pHl74RwgG51IcwNQiABW7GKq5JCvJ7Gwh1lFfpb5CZibVMEy5a7vlp/9fmeF2EsSQqnvNkkEj+Dhj+3sgbn39yEhEacK8LiKdDrGoQDQuFaKnmqy+zxWaw+V9Vl4ORdeW0OQqe36zgRd44HJcX4ja2rdEamQrgkP1wrddRNNOwy6D5C9s0UTTj2ziNUsSxT+4K1On8AKYLctobR8ap9NYc330YWJa04EUPYSrRn7dU3zybVzkaJ0Mx+WRgRRhpxVBockJxBXROAOwzAiMa8s8rTxBhISz6GaGd4UVh+v/d8vaQGSHyY97nhAlU1ainV2QPA0AxowjWCrEVn7xcqEpYdlHzDKFXXhlPdCencoKP4sPlvbeMju0V2iSiA8xR37nw5fMiVy8sFvBvILLf1Oa+rtfzXwlRPaEwSYu8T9WeaANi+qLOEfgXxzXPqr9mdPOo/0hmk=
+  on:
+    branch: production
