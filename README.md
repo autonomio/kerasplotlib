@@ -1,5 +1,5 @@
 # kerasplotlib
-A visualization library for Keras users with plots particularly useful for training and evaluating deep learning models.
+A visualization library for Keras users with plots particularly useful for training and evaluating deep learning models. 
 
 [TrainingLog](https://github.com/autonomio/kerasplotlib#traininglog) - a live updated line graph with accuracy and loss metrics for each epoch
 
@@ -22,3 +22,6 @@ Then make sure that your model.fit includes the following:
 
     callbacks=[TrainingLog()]
   
+### text
+
+A pretty printer for text notebooks.
