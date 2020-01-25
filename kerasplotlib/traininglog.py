@@ -5,7 +5,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from IPython.display import clear_output
 
-from tensorflow.keras.callbacks import Callback
+from keras.callbacks import Callback
 
 def loss2name(loss):
     if hasattr(loss, '__call__'):
