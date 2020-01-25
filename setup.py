@@ -16,7 +16,7 @@ MAINTAINER_EMAIL = 'mailme@mikkokotila.com'
 URL = 'http://mikkokotila.com'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/autonomio/kerasplotlib'
-VERSION = '0.1.4'
+VERSION = '0.1.5'
 
 try:
     from setuptools import setup
