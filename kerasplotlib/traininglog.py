@@ -16,11 +16,18 @@ def loss2name(loss):
         return loss
 
 class TrainingLog(Callback):
-    def __init__(self, figsize=None, cell_size=(6, 4), dynamic_x_axis=False, max_cols=2):
+    def __init__(self,
+                 figsize=None,
+                 cell_size=(6, 4),
+                 dynamic_x_axis=False,
+                 max_cols=2,
+                 y_max=1):
+
         self.figsize = figsize
         self.cell_size = cell_size
         self.dynamic_x_axis = dynamic_x_axis
         self.max_cols = max_cols
+        self.y_max = y_max
 
     def on_train_begin(self, logs={}):
         self.base_metrics = [metric for metric in self.params['metrics'] if not metric.startswith('val_')]
@@ -50,6 +57,7 @@ class TrainingLog(Callback):
                   figsize=self.figsize, 
                   max_epoch=self.max_epoch,
                   max_cols=self.max_cols,
+                  y_max=self.y_max,
                   validation_fmt="val_{}")
 
 def draw_plot(logs,
@@ -57,6 +65,7 @@ def draw_plot(logs,
               figsize=None,
               max_epoch=None,
               max_cols=2,
+              y_max=1,
               validation_fmt="val_{}",
               metric2title={}):
     
@@ -72,12 +81,12 @@ def draw_plot(logs,
         plt.plot(range(1, len(logs) + 1),
                  [log[metric] for log in logs],
                  label="training", color='#1B2F33', linestyle='dashed')
-        plt.ylim(0, 1)
+        plt.ylim(0, y_max)
         if validation_fmt.format(metric) in logs[0]:
             plt.plot(range(1, len(logs) + 1),
                      [log[validation_fmt.format(metric)] for log in logs],
                      label="validation", color='#A72608')
-        plt.ylim(0, 1)
+        plt.ylim(0, y_max)
         plt.title(metric2title.get(metric, metric), pad=15)
         plt.xlabel('epoch', color='grey')
     plt.legend(loc=1, ncol=1, bbox_to_anchor=(1.35, 1.0))
