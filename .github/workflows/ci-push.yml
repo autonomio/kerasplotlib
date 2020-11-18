@@ -35,8 +35,3 @@ jobs:
         export MPLBACKEND=agg
         pip install coveralls
         coverage run --source=talos ./test-ci.py
-    - name: Coverage
-      env:
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-      run: |
-        coveralls
