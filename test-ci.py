@@ -1,2 +1,3 @@
-if 1 + 2 == 3:
-    pass
+#!/usr/bin/env python3
+
+import kerasplotlib
