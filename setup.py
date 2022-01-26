@@ -16,7 +16,7 @@ MAINTAINER_EMAIL = 'mailme@mikkokotila.com'
 URL = 'http://mikkokotila.com'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/autonomio/kerasplotlib'
-VERSION = '0.1.6'
+VERSION = '0.2.1'
 
 try:
     from setuptools import setup
@@ -31,10 +31,6 @@ def check_dependencies():
         import matplotlib
     except ImportError:
         install_requires.append('matplotlib')
-    try:
-        import keras
-    except ImportError:
-        install_requires.append('keras')
     try:
         import ipython
     except ImportError:
