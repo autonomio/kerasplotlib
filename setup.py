@@ -16,7 +16,7 @@ MAINTAINER_EMAIL = 'mailme@mikkokotila.com'
 URL = 'http://mikkokotila.com'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/autonomio/kerasplotlib'
-VERSION = '0.2.1'
+VERSION = '1.0'
 
 try:
     from setuptools import setup
@@ -60,10 +60,9 @@ if __name__ == "__main__":
         packages=['kerasplotlib'],
         classifiers=[
                      'Intended Audience :: Science/Research',
-                     'Programming Language :: Python :: 2.7',
-                     'Programming Language :: Python :: 3.4',
-                     'Programming Language :: Python :: 3.5',
-                     'Programming Language :: Python :: 3.6',
+                     'Programming Language :: Python :: 3.7',
+                     'Programming Language :: Python :: 3.8',
+                     'Programming Language :: Python :: 3.9',
                      'License :: OSI Approved :: MIT License',
                      'Topic :: Scientific/Engineering :: Visualization',
                      'Topic :: Multimedia :: Graphics',
